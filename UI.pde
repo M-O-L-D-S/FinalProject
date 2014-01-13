@@ -11,11 +11,15 @@ void setup() {
   textAlign(CENTER);
   textSize(30);
   StartScreen = true;
-  logo = loadImage("logo.jpeg");
+  logo = loadImage("logo.jpg");
+  Play = false;
+  HowToPlay = false;
+  Settings = false;
+  Credits = false;
 }
 
 void draw() {
-  if (StartScreen == true) {
+  if (StartScreen == true && Play == false && HowToPlay == false && Settings == false && Credits == false) {
     background(10);
     rectangle(width/2, height/2+height/10);
     rectangle(width/2, height/2+(height/10*2));
@@ -27,7 +31,8 @@ void draw() {
     options("Settings", width/2, height/2+(height/10*3+9));
     options("Credits", width/2, height/2+(height/10*4+9));
   }
-  else if (StartScreen = false && Play == true) {
+  //play
+  else if (StartScreen == false && Play == true) {
     background(0);
   }
   //credits
@@ -43,6 +48,10 @@ void draw() {
     text("User Interface: Steven Skubish", width/2, height/7*4);
     text("Graphics/Design: Laura Vogel", width/2, height/7*5);
     text("QA/Playtesting: Orian Sneor", width/2, height/7*6);
+    rectangle(width/2, height-height/16);
+    
+    fill(0);
+    text("Back", width/2, height - (height/16)+9);
   }
 }
 
