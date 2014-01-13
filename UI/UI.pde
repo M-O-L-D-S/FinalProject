@@ -49,9 +49,7 @@ void draw() {
     text("Graphics/Design: Laura Vogel", width/2, height/7*5);
     text("QA/Playtesting: Orian Sneor", width/2, height/7*6);
     rectangle(width/2, height-height/16);
-    
-    fill(0);
-    text("Back", width/2, height - (height/16)+9);
+    options("Back", width/2, height - (height/16)+9);
   }
 }
 
@@ -94,10 +92,18 @@ void options(String t, float x, float y) {
       StartScreen = false;
       Credits = true;
     }
+    //back button
+    if (mousePressed && mouseX >= width/2-width/3/2 && mouseX <= width/2+width/3/2 && mouseY >= height-height/16-height/20/2 && mouseY >= height-height/16+height/20/2) {
+      StartScreen = true;
+      Play = false;
+      HowToPlay = false;
+      Settings = false;
+      Credits = false;
+    }
+    else {
+      fill(0);
+    }
+    text(t, x, y);
   }
-  else {
-    fill(0);
-  }
-  text(t, x, y);
 }
 
