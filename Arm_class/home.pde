@@ -6,6 +6,9 @@ void setup(){
 }
 
 void draw(){
-  a1.display();
-  a1.work();
+    float[] c = a1.c.array();
+    println("x: " + c[0] + " y: " + c[1]);
+    a1.work();
+    a1.display();
+
 }
