@@ -10,10 +10,6 @@ Minim minim;
 AudioPlayer music;
 void setup() {
   s1 = new Sel ();
-  //music
-  minim = new Minim(this);
-  music = minim.loadFile("Song.mp3");
-  music.play();
   size(displayWidth, displayHeight);
   rectMode(CENTER);
   imageMode(CENTER);
@@ -44,7 +40,11 @@ void draw() {
     background(0);
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
-      s1.show ();
+    s1.show ();
+    //music
+    minim = new Minim(this);
+    music = minim.loadFile("Song.mp3");
+    music.play();
   }
   //howtoplay
   else if (StartScreen == false && HowToPlay == true) {
