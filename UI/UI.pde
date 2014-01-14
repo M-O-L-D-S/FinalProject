@@ -4,12 +4,20 @@ Boolean HowToPlay;
 Boolean Settings;
 Boolean Credits;
 PImage logo;
+Sel s1;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer music;
 void setup() {
+  s1 = new Sel ();
+  //music
+  minim = new Minim(this);
+  music = minim.loadFile("Song.mp3");
+  music.play();
   size(displayWidth, displayHeight);
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER);
-  textSize(30);
   StartScreen = true;
   logo = loadImage("logo.jpg");
   Play = false;
@@ -36,6 +44,7 @@ void draw() {
     background(0);
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
+      s1.show ();
   }
   //howtoplay
   else if (StartScreen == false && HowToPlay == true) {
@@ -78,13 +87,6 @@ void rectangle(float x, float y) {
     stroke(209, 219, 244);
     strokeWeight(5);
   }
-  //red
-  fill(139, 7, 7);
-  rect(x, y, width/3, height/20);
-}
-
-void options(String t, float x, float y) {
-
   //play select
   if (mousePressed && mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= (height/2+(height/10+9)) - height/40-9 && mouseY <= (height/2+(height/10+9)) + height/40-9) {
     StartScreen = false;
@@ -106,19 +108,26 @@ void options(String t, float x, float y) {
     Credits = true;
   }
   //back button
-  if (mousePressed && mouseX >= width/2 - width/3/2 && mouseX <= width/2 + width/3/2 && mouseY >= height - ((height/16)+9) - (height/20/2) && mouseY <= height - ((height/16)+9) + (height/20/2)) {
+  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height - (height/16) - (height/20/2) && mouseY <= height - (height/16)+9 + (height/20/2)) {
     StartScreen = true;
     Play = false;
     HowToPlay = false;
     Settings = false;
     Credits = false;
   }
+  //red
+  fill(139, 7, 7);
+  rect(x, y, width/3, height/20);
+}
+//text and hightlighting
+void options(String t, float x, float y) {
   if (mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= y - height/40-9 && mouseY <= y + height/40-9) {
     fill(238, 221, 68);
   }
   else {
     fill(0);
   }
+  textSize(30);
   text(t, x, y);
 }
 
