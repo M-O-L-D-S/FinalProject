@@ -34,6 +34,20 @@ void draw() {
   //play
   else if (StartScreen == false && Play == true) {
     background(0);
+    rectangle(width/2, height-height/16);
+    options("Back", width/2, height - (height/16)+9);
+  }
+  //howtoplay
+  else if (StartScreen == false && HowToPlay == true) {
+    background(0);
+    rectangle(width/2, height-height/16);
+    options("Back", width/2, height - (height/16)+9);
+  }
+  //Settings
+  else if (StartScreen == false && Settings == true) {
+    background(0);
+    rectangle(width/2, height-height/16);
+    options("Back", width/2, height - (height/16)+9);
   }
   //credits
   else if (StartScreen == false && Credits == true) {
@@ -70,40 +84,41 @@ void rectangle(float x, float y) {
 }
 
 void options(String t, float x, float y) {
+
+  //play select
+  if (mousePressed && mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= (height/2+(height/10+9)) - height/40-9 && mouseY <= (height/2+(height/10+9)) + height/40-9) {
+    StartScreen = false;
+    Play = true;
+  }
+  //how to play selection
+  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*2+9) - height/40-9 && mouseY <= height/2+(height/10*2+9) + height/40-9) {
+    StartScreen = false;
+    HowToPlay = true;
+  }
+  //settings select
+  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*3+9) - height/40-9 && mouseY <= height/2+(height/10*3+9) + height/40-9) {
+    StartScreen = false;
+    Settings = true;
+  }
+  //credits select
+  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*4+9) - height/40-9 && mouseY <= height/2+(height/10*4+9) + height/40-9) {
+    StartScreen = false;
+    Credits = true;
+  }
+  //back button
+  if (mousePressed && mouseX >= width/2 - width/3/2 && mouseX <= width/2 + width/3/2 && mouseY >= height - ((height/16)+9) - (height/20/2) && mouseY <= height - ((height/16)+9) + (height/20/2)) {
+    StartScreen = true;
+    Play = false;
+    HowToPlay = false;
+    Settings = false;
+    Credits = false;
+  }
   if (mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= y - height/40-9 && mouseY <= y + height/40-9) {
     fill(238, 221, 68);
-    //play select
-    if (mousePressed && mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= (height/2+(height/10+9)) - height/40-9 && mouseY <= (height/2+(height/10+9)) + height/40-9) {
-      StartScreen = false;
-      Play = true;
-    }
-    //how to play selection
-    if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*2+9) - height/40-9 && mouseY <= height/2+(height/10*2+9) + height/40-9) {
-      StartScreen = false;
-      HowToPlay = true;
-    }
-    //settings select
-    if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*3+9) - height/40-9 && mouseY <= height/2+(height/10*3+9) + height/40-9) {
-      StartScreen = false;
-      Settings = true;
-    }
-    //credits select
-    if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*4+9) - height/40-9 && mouseY <= height/2+(height/10*4+9) + height/40-9) {
-      StartScreen = false;
-      Credits = true;
-    }
-    //back button
-    if (mousePressed && mouseX >= width/2-width/3/2 && mouseX <= width/2+width/3/2 && mouseY >= height-height/16-height/20/2 && mouseY >= height-height/16+height/20/2) {
-      StartScreen = true;
-      Play = false;
-      HowToPlay = false;
-      Settings = false;
-      Credits = false;
-    }
-    else {
-      fill(0);
-    }
-    text(t, x, y);
   }
+  else {
+    fill(0);
+  }
+  text(t, x, y);
 }
 
