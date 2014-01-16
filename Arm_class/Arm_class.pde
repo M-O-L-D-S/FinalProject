@@ -3,11 +3,12 @@ class Arm {
   float leg;
   float alt;
   float theta;
-
+  float oldxDist;
   PVector a, b, c;
   float xDist;
   float yDist;
-
+  float spunchSpeed;
+  float upunchSpeed;
 
   Arm() {
     xDist = 100;
@@ -15,10 +16,13 @@ class Arm {
     a = new PVector(100, 100);
     b = new PVector(a.x+xDist, a.y+yDist);
     c = new PVector();
+    spunchSpeed=6;
+    upunchSpeed=15;
   }
 
   void display() {
-  
+    b.x = a.x + xDist;
+    b.y = a.y + yDist;
     line(a.x, a.y, c.x, c.y);
     line(b.x, b.y, c.x, c.y);
   }
@@ -54,5 +58,31 @@ class Arm {
     //makes a line from the midpoint with length alt and angle theta
     c.add(something);
   }
-}
+
+  void straightPunch() {
+    xDist+=spunchSpeed;
+    yDist-=spunchSpeed/4;
+    if (base>=390) {
+      spunchSpeed=-4;
+    }
+    if (xDist<oldxDist) {
+      xDist=oldxDist;
+      spunch=false;
+      spunchSpeed=6;
+    }
+  }
+  
+  void upperCut(){
+     xDist+=upunchSpeed;
+    yDist-=upunchSpeed;
+    if (base>=345) {
+      upunchSpeed=-4;
+    }
+    if (xDist<oldxDist) {
+      xDist=oldxDist;
+      upunch=false;
+      upunchSpeed=10;
+    }
+  }
+} 
 
