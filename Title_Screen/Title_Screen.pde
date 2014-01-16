@@ -1,4 +1,5 @@
 PImage R, W, B, Y;
+PFont font;
 
 void setup () {
   size (displayWidth, displayHeight);
@@ -6,18 +7,19 @@ void setup () {
   W = loadImage ("Weiss.png");
   B = loadImage ("Blake.png");
   Y = loadImage ("Yang.png");
+  font = loadFont ("RWBY font.vlw");
 }
 
 void draw () {
   imageMode (CENTER);
-  background (255);
-  image (R, 145, 95);
-  image (W, 920, 585, W.width/2, W.height/2);
-  image (B, 900, 150);
-  image (Y, 150, 625, Y.width/2, Y.height/2);
+  background (240, 240, 240);
+  image (R, width/9, height/9);
+  image (W, 8*width/9, 9*height/11, W.width/2, W.height/2);
+  image (B, 8*width/9, height/6, B.width/3, B.height/3);
+  image (Y, width/9, 9*height/11, Y.width/2, Y.height/2);
+  textFont (font, 50);
   fill (0);
-  textSize (50);
-  text (mouseX, width/2, height/2);
-  text(mouseY, width/2, height/2 +100);
+  textAlign (CENTER);
+  text("RWBY", width/2, height/2);
 }
 
