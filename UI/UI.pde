@@ -3,6 +3,8 @@ Boolean Play;
 Boolean HowToPlay;
 Boolean Settings;
 Boolean Credits;
+Boolean LiamBoolean;
+PImage Liam;
 PImage logo;
 Sel s1;
 import ddf.minim.*;
@@ -16,15 +18,25 @@ void setup() {
   textAlign(CENTER);
   StartScreen = true;
   logo = loadImage("logo.jpg");
+  Liam = loadImage("Liam.jpg");
   Play = false;
   HowToPlay = false;
   Settings = false;
   Credits = false;
+  LiamBoolean = false;
+  //music
+  minim = new Minim(this);
+  music = minim.loadFile("Song.mp3");
 }
 
 void draw() {
   if (StartScreen == true && Play == false && HowToPlay == false && Settings == false && Credits == false) {
-    background(10);
+    if (LiamBoolean == true) {
+      image(Liam, width/2, height/2, displayWidth, displayHeight);
+    }
+    else if (LiamBoolean == false) {
+      background(0);
+    }
     rectangle(width/2, height/2+height/10);
     rectangle(width/2, height/2+(height/10*2));
     rectangle(width/2, height/2+(height/10*3));
@@ -37,30 +49,50 @@ void draw() {
   }
   //play
   else if (StartScreen == false && Play == true) {
-    background(0);
+    if (LiamBoolean == true) {
+      image(Liam, width/2, height/2, displayWidth, displayHeight);
+    }
+    else if (LiamBoolean == false) {
+      background(0);
+    }
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
     s1.show ();
     //music
-    minim = new Minim(this);
-    music = minim.loadFile("Song.mp3");
     music.play();
   }
   //howtoplay
   else if (StartScreen == false && HowToPlay == true) {
-    background(0);
+    if (LiamBoolean == true) {
+      image(Liam, width/2, height/2, displayWidth, displayHeight);
+    }
+    else if (LiamBoolean == false) {
+      background(0);
+    }
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
   }
   //Settings
   else if (StartScreen == false && Settings == true) {
-    background(0);
+    if (LiamBoolean == true) {
+      image(Liam, width/2, height/2, displayWidth, displayHeight);
+    }
+    else if (LiamBoolean == false) {
+      background(0);
+    }
     rectangle(width/2, height-height/16);
+    rectangle(width/2, height/2);
+    LiamText(width/2, height/2 + 9);
     options("Back", width/2, height - (height/16)+9);
   }
   //credits
   else if (StartScreen == false && Credits == true) {
-    background(0);
+    if (LiamBoolean == true) {
+      image(Liam, width/2, height/2, displayWidth, displayHeight);
+    }
+    else if (LiamBoolean == false) {
+      background(0);
+    }
     fill(209, 219, 244);
     textSize(80);
     text("Credits", width/2, height/7);
@@ -129,5 +161,19 @@ void options(String t, float x, float y) {
   }
   textSize(30);
   text(t, x, y);
+}
+void LiamText(float x, float y) {
+  fill(0);
+  if (LiamBoolean == true) {
+    text("Liam!", x, y);
+  }
+  else if (LiamBoolean == false) {
+    text("Liam?", x, y);
+  }
+}
+void mousePressed() {
+      if (mousePressed && Settings == true && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2 - height/40 && mouseY <= height/2 + height/40) {
+      LiamBoolean = !LiamBoolean;
+    }
 }
 
