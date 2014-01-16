@@ -6,6 +6,8 @@ Boolean Credits;
 Boolean LiamBoolean;
 PImage Liam;
 PImage logo;
+float HalfTheBoxWidth;
+float HalfTheBoxHeight;
 Sel s1;
 import ddf.minim.*;
 Minim minim;
@@ -24,6 +26,8 @@ void setup() {
   Settings = false;
   Credits = false;
   LiamBoolean = false;
+  HalfTheBoxWidth = width/6;
+  HalfTheBoxHeight = height/40;
   //music
   minim = new Minim(this);
   music = minim.loadFile("Song.mp3");
@@ -31,6 +35,7 @@ void setup() {
 
 void draw() {
   if (StartScreen == true && Play == false && HowToPlay == false && Settings == false && Credits == false) {
+        println(mouseY);
     if (LiamBoolean == true) {
       image(Liam, width/2, height/2, displayWidth, displayHeight);
     }
@@ -109,7 +114,7 @@ void draw() {
 }
 
 void rectangle(float x, float y) {
-  if (mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= y - height/40 && mouseY <= y + height/40) {
+  if (mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= y - HalfTheBoxHeight && mouseY <= y + HalfTheBoxHeight) {
     //yang yellow
     stroke(238, 221, 68);
     strokeWeight(7);
@@ -120,27 +125,27 @@ void rectangle(float x, float y) {
     strokeWeight(5);
   }
   //play select
-  if (mousePressed && mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= (height/2+(height/10+9)) - height/40-9 && mouseY <= (height/2+(height/10+9)) + height/40-9) {
+  if (mousePressed && mouseX >= x - HalfTheBoxWidth && mouseX <= x + HalfTheBoxWidth && mouseY >= (height/2+(height/10)) - HalfTheBoxHeight && mouseY <= (height/2+(height/10)) + HalfTheBoxHeight) {
     StartScreen = false;
     Play = true;
   }
   //how to play selection
-  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*2+9) - height/40-9 && mouseY <= height/2+(height/10*2+9) + height/40-9) {
+  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2+(height/10*2) - HalfTheBoxHeight && mouseY <= height/2+(height/10*2) + HalfTheBoxHeight) {
     StartScreen = false;
     HowToPlay = true;
   }
   //settings select
-  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*3+9) - height/40-9 && mouseY <= height/2+(height/10*3+9) + height/40-9) {
+  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2+(height/10*3) - HalfTheBoxHeight && mouseY <= height/2+(height/10*3) + HalfTheBoxHeight) {
     StartScreen = false;
     Settings = true;
   }
   //credits select
-  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2+(height/10*4+9) - height/40-9 && mouseY <= height/2+(height/10*4+9) + height/40-9) {
+  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2+(height/10*4) - HalfTheBoxHeight && mouseY <= height/2+(height/10*3) + HalfTheBoxHeight) {
     StartScreen = false;
     Credits = true;
   }
   //back button
-  if (mousePressed && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height - (height/16) - (height/20/2) && mouseY <= height - (height/16)+9 + (height/20/2)) {
+  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height - (height/16) - HalfTheBoxHeight && mouseY <= height - (height/16) + HalfTheBoxHeight) {
     StartScreen = true;
     Play = false;
     HowToPlay = false;
@@ -153,7 +158,7 @@ void rectangle(float x, float y) {
 }
 //text and hightlighting
 void options(String t, float x, float y) {
-  if (mouseX >= x - width/6 && mouseX <= x + width/6 && mouseY >= y - height/40-9 && mouseY <= y + height/40-9) {
+  if (mouseX >= x - HalfTheBoxWidth && mouseX <= x + HalfTheBoxWidth && mouseY >= y - HalfTheBoxHeight-9 && mouseY <= y + HalfTheBoxHeight-9) {
     fill(238, 221, 68);
   }
   else {
@@ -172,7 +177,7 @@ void LiamText(float x, float y) {
   }
 }
 void mousePressed() {
-      if (mousePressed && Settings == true && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2 - height/40 && mouseY <= height/2 + height/40) {
+      if (mousePressed && Settings == true && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2 - HalfTheBoxHeight && mouseY <= height/2 + HalfTheBoxHeight) {
       LiamBoolean = !LiamBoolean;
     }
 }
