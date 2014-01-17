@@ -11,25 +11,24 @@ void setup() {
 void draw() {
   background(245);  
   float[] c = a1.c.array();
-  println("x: " + c[0] + " y: " + c[1]);
+  fill(0);
+  text("x: " + c[0] + " y: " + c[1],100,100);
   a1.work();
   a1.display();
   a2.work();
   a2.display();
 
   if (keyPressed) {
-    if (key == 'w' || key == 'W'&& spunch==false){
+    if ((key == 'w' || key == 'W')&& spunch==false){
     spunch=true; 
     a1.oldxDist=a1.xDist;
     }
-   if(key=='s'|| key=='S' && upunch==false){
+   if((key=='s'|| key=='S') && upunch==false){
      upunch=true; 
     a2.oldxDist=a2.xDist;
    }
   }
   
-
-
   if (spunch== true) {
     a1.straightPunch();
   }
@@ -45,7 +44,7 @@ void draw() {
 //    a1.oldxDist=a1.xDist;
 //  }
 //}
-
+//
 //void keyPressed() {
 //  if (upunch==false) {
 //    upunch=true; 
