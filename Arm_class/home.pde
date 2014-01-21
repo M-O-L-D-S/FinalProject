@@ -1,6 +1,7 @@
 Arm a1, a2;
 boolean spunch=false;
 boolean upunch=false;
+boolean reflex=false;
 void setup() {
   size (600, 600);
   a1=new Arm();
@@ -21,7 +22,9 @@ void draw() {
   if (keyPressed) {
     if ((key == 'w' || key == 'W')&& spunch==false){
     spunch=true; 
+    reflex=true;
     a1.oldxDist=a1.xDist;
+    a2.oldxDist=a2.xDist;
     }
    if((key=='s'|| key=='S') && upunch==false){
      upunch=true; 
@@ -31,6 +34,7 @@ void draw() {
   
   if (spunch== true) {
     a1.straightPunch();
+    a2.reflex();
   }
 
   if (upunch== true) {

@@ -9,6 +9,7 @@ class Arm {
   float yDist;
   float spunchSpeed;
   float upunchSpeed;
+  float rspeed;
 
   Arm() {
     xDist = 100;
@@ -16,8 +17,9 @@ class Arm {
     a = new PVector(100, 100);
     b = new PVector(a.x+xDist, a.y+yDist);
     c = new PVector();
-    spunchSpeed=6;
+    spunchSpeed=8;
     upunchSpeed=15;
+    rspeed=-5;
   }
 
   void display() {
@@ -68,20 +70,33 @@ class Arm {
     if (xDist<oldxDist) {
       xDist=oldxDist;
       spunch=false;
-      spunchSpeed=6;
+      spunchSpeed=8;
     }
   }
   
   void upperCut(){
      xDist+=upunchSpeed;
-    yDist-=upunchSpeed;
-    if (base>=345) {
+    yDist-=upunchSpeed*2;
+    if (base>=330) {
       upunchSpeed=-4;
     }
     if (xDist<oldxDist) {
       xDist=oldxDist;
       upunch=false;
-      upunchSpeed=10;
+      upunchSpeed=15;
+    }
+  }
+  
+  void reflex(){
+    xDist-=5;
+    yDist-=1;
+       if (base>=300) {
+      rspeed=4;
+    }
+    if (xDist<oldxDist) {
+      xDist=oldxDist;
+     reflex=false;
+      rspeed=-5;
     }
   }
 } 
