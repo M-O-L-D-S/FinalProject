@@ -20,6 +20,9 @@ void draw () {
   textFont (font, 50);
   fill (0);
   textAlign (CENTER);
-  text("RWBY", width/2, height/2);
+  text("RWBY:", width/2, height/2);
+  text ("the Ultimate", width/2, height/2+75);
+  text ("YoloSwag", width/2, height/2+125);
+  text ("Experience", width/2, height/2+175);
 }
 
