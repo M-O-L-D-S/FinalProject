@@ -16,5 +16,5 @@ Graphics: Laura Stanley Vogel
 
 Bug Tester: Orian Megan's Boyfriend Sneor
 
-BFFL of Group: Brian Maher
+BFFL of Group: Barrack Obama
 - LV
