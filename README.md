@@ -25,26 +25,26 @@ BFFL of Group: Barack Obama
 Jobs:
 
 Everyone:
-individual essay
+individual essay;
 NAME OF GAME??????
 
 LV:
 
-map/levels
+map/levels;
 Make that map selection screen and use int level = (1-6 or so) to make the background change.
 
 
 Orian & Danny:
 
-villains (pics or multiplayer?)
-combining arms+movement
-combat
+villains (pics or multiplayer?);
+combining arms+movement;
+combat;
 
 SS (& LV):
-gameover and end screens (depending on health)
-Put LV's stuff in with rest of code. You'll just combine everything.
+gameover and end screens (depending on health);
+Put LV's stuff in with rest of code. You'll just combine everything;
 *health bar done; needs to be put in main code
 
 Matt: 
-Big essay
+Big essay;
 readme
