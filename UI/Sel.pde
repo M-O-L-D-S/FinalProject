@@ -1,13 +1,16 @@
 class Sel {
   PImage sel;
+  PFont Font;
 
   Sel () {
     sel = loadImage ("None.jpg");
+    Font = loadFont ("Font.vlw");
+    
   }
 
   void show () {
     textAlign (CENTER);
-    textSize(50);
+    textFont (Font, 50);
     imageMode (CENTER);
     image (sel, width/2, height/2, sel.width/2, sel.height/2);
 

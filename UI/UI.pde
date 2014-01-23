@@ -6,12 +6,16 @@ Boolean Credits;
 Boolean LiamBoolean;
 PImage Liam;
 PImage logo;
+<<<<<<< HEAD
 float HalfTheBoxWidth;
 float HalfTheBoxHeight;
+=======
+float song;
+>>>>>>> Music Fixed
 Sel s1;
 import ddf.minim.*;
 Minim minim;
-AudioPlayer music;
+AudioPlayer music1, music2, music3;
 void setup() {
   s1 = new Sel ();
   size(displayWidth, displayHeight);
@@ -19,6 +23,7 @@ void setup() {
   imageMode(CENTER);
   textAlign(CENTER);
   StartScreen = true;
+  song = random(1,3.9999999);
   logo = loadImage("logo.jpg");
   Liam = loadImage("Liam.jpg");
   Play = false;
@@ -30,10 +35,24 @@ void setup() {
   HalfTheBoxHeight = height/40;
   //music
   minim = new Minim(this);
-  music = minim.loadFile("Song.mp3");
+  music1 = minim.loadFile("Song1.mp3");
+  music2 = minim.loadFile("Song2.mp3");
+  music3 = minim.loadFile("Song3.mp3");
+  if (song >= 1 && song <= 1.9999999) {
+    music1.play();
+  }
+
+  if (song >= 2 && song <= 2.9999999) {
+    music2.play();
+  }
+
+  if (song >= 3 && song <= 3.9999999) {
+    music3.play();
+  }
 }
 
 void draw() {
+  println(song);
   if (StartScreen == true && Play == false && HowToPlay == false && Settings == false && Credits == false) {
         println(mouseY);
     if (LiamBoolean == true) {
@@ -63,8 +82,6 @@ void draw() {
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
     s1.show ();
-    //music
-    music.play();
   }
   //howtoplay
   else if (StartScreen == false && HowToPlay == true) {
@@ -177,8 +194,14 @@ void LiamText(float x, float y) {
   }
 }
 void mousePressed() {
+<<<<<<< HEAD
       if (mousePressed && Settings == true && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2 - HalfTheBoxHeight && mouseY <= height/2 + HalfTheBoxHeight) {
       LiamBoolean = !LiamBoolean;
     }
+=======
+  if (mousePressed && Settings == true && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2 - height/40 && mouseY <= height/2 + height/40) {
+    LiamBoolean = !LiamBoolean;
+  }
+>>>>>>> Music Fixed
 }
 
