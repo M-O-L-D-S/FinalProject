@@ -6,15 +6,15 @@ Project Description:
 A combat game based on the web anime RWBY.
 
 
-Project Manager: Matt Mastropasqua
+Project Manager: Matt Octothorpe Octothorpe Mastropasqua
 
-Code Monkey: Danny Wilkins
+Code Monkey: Danny Blubbernut Wilkins
 
-UI: Steven Skubish
+UI: Steven NightShark 115 Skubish
 
-Graphics: Laura Vogel
+Graphics: Laura Stanley Vogel
 
-Bug Tester: Orian Sneor
+Bug Tester: Orian Megan's Boyfriend Sneor
 
 
 - LV
