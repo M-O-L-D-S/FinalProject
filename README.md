@@ -10,9 +10,12 @@ Project Manager: Matt Octothorpe Octothorpe Mastropasqua
 
 *helping
 
+
+
 Code Monkey: Danny Blubbernut Wilkins
 
 *person/running
+
 
 
 UI: Steven NightShark 115 Skubish
@@ -25,6 +28,8 @@ UI: Steven NightShark 115 Skubish
 
 *Liam Neeson
 
+
+
 Graphics: Laura Stanley Vogel
 
 *all music, pics, font
@@ -33,6 +38,8 @@ Graphics: Laura Stanley Vogel
 
 *character selection screen
 
+
+
 Bug Tester: Orian Megan's Boyfriend Sneor
 
 *tested bugs
@@ -40,6 +47,7 @@ Bug Tester: Orian Megan's Boyfriend Sneor
 *punching arms
 
 *flowchart
+
 
 
 BFFL of Group: Barack Obama
@@ -54,7 +62,8 @@ BFFL of Group: Barack Obama
 Jobs:
 
 Everyone:
-individual essay;
+individual essay
+
 NAME OF GAME??????
 
 LV:
