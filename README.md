@@ -23,31 +23,20 @@ Bug Tester: Orian Sneor
 
 Jobs:
 
+
+
 Everyone:
 
 individual summaries
 
-
-LV:
-
-levels: different backgrounds and villains
 
 
 Orian & Danny:
 
 villains combat
 
-combining arms+movement
 
 
-SS (& LV):
+Steven, Laura, Matt: 
 
-gameover and end screens (depending on health)
-
-Put LV's stuff in with rest of code. You'll just combine everything
-
-*health bar done; needs to be put in main code
-
-Matt: 
-
-help
+Put everything together.
