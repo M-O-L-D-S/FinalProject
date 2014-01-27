@@ -22,7 +22,7 @@ void setup () {
 void draw () {
   //r1.show();
   //w1.show();
-  //b1.show();
+  b1.show();
   //y1.show();
 
   v1.show ();
