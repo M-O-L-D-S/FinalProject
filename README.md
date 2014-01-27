@@ -3,7 +3,8 @@ FinalProject
 
 Project Description:
 
-A combat game based on the web anime RWBY.
+A combat game based on the web anime RWBY. The player controls one of the girls of Team RWBY and must fight
+enemies that fly at them from off screen.
 
 
 Project Manager: Matt Mastropasqua
