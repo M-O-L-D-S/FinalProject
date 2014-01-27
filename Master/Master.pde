@@ -127,7 +127,7 @@ void draw() {
     fill(209, 219, 244);
     textSize(80);
     text("Credits", width/2, height/7);
-    textSize(30);
+    textSize(50);
     fill(139, 7, 7);
     text("Project Manager: Matt Mastropasqua", width/2, height/7*2);
     text("Programmer/''Code Monkey'': Danny Wilkins", width/2, height/7*3);
