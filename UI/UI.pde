@@ -6,12 +6,10 @@ Boolean Credits;
 Boolean LiamBoolean;
 PImage Liam;
 PImage logo;
-<<<<<<< HEAD
 float HalfTheBoxWidth;
 float HalfTheBoxHeight;
-=======
 float song;
->>>>>>> Music Fixed
+PFont Font;
 Sel s1;
 import ddf.minim.*;
 Minim minim;
@@ -33,10 +31,12 @@ void setup() {
   LiamBoolean = false;
   HalfTheBoxWidth = width/6;
   HalfTheBoxHeight = height/40;
+  Font = loadFont ("Font.vlw");
+  textFont (Font, 50);
   //music
   minim = new Minim(this);
-  music1 = minim.loadFile("Song1.mp3");
-  music2 = minim.loadFile("Song2.mp3");
+  music1 = minim.loadFile("Song1(TWBTD).mp3");
+  music2 = minim.loadFile("Song2(IBurn).mp3");
   music3 = minim.loadFile("Song3.mp3");
   if (song >= 1 && song <= 1.9999999) {
     music1.play();
@@ -142,7 +142,7 @@ void rectangle(float x, float y) {
     strokeWeight(5);
   }
   //play select
-  if (mousePressed && mouseX >= x - HalfTheBoxWidth && mouseX <= x + HalfTheBoxWidth && mouseY >= (height/2+(height/10)) - HalfTheBoxHeight && mouseY <= (height/2+(height/10)) + HalfTheBoxHeight) {
+  if (mousePressed && StartScreen == true && mouseX >= x - HalfTheBoxWidth && mouseX <= x + HalfTheBoxWidth && mouseY >= (height/2+(height/10)) - HalfTheBoxHeight && mouseY <= (height/2+(height/10)) + HalfTheBoxHeight) {
     StartScreen = false;
     Play = true;
   }
@@ -157,7 +157,7 @@ void rectangle(float x, float y) {
     Settings = true;
   }
   //credits select
-  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2+(height/10*4) - HalfTheBoxHeight && mouseY <= height/2+(height/10*3) + HalfTheBoxHeight) {
+  if (mousePressed && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2+(height/10*4) - HalfTheBoxHeight && mouseY <= height/2+(height/10*4) + HalfTheBoxHeight) {
     StartScreen = false;
     Credits = true;
   }
@@ -194,14 +194,8 @@ void LiamText(float x, float y) {
   }
 }
 void mousePressed() {
-<<<<<<< HEAD
       if (mousePressed && Settings == true && mouseX >= width/2 - HalfTheBoxWidth && mouseX <= width/2 + HalfTheBoxWidth && mouseY >= height/2 - HalfTheBoxHeight && mouseY <= height/2 + HalfTheBoxHeight) {
       LiamBoolean = !LiamBoolean;
     }
-=======
-  if (mousePressed && Settings == true && mouseX >= width/2 - width/6 && mouseX <= width/2 + width/6 && mouseY >= height/2 - height/40 && mouseY <= height/2 + height/40) {
-    LiamBoolean = !LiamBoolean;
-  }
->>>>>>> Music Fixed
 }
 
