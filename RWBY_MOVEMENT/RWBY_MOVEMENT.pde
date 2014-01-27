@@ -1,3 +1,6 @@
+//Create person and arms
+//Create variables that control person and arms 
+
 Person test;
 
 Arm a1, a2;
@@ -29,6 +32,13 @@ int time3 = 0;
 
 int number = 0;
 
+//Initialize Blackbox
+//Set framerate
+//Set Size
+//Load images
+//Load classes
+//Set strokeWeight
+
 void setup()
 {
   BlackBox.init(this);
@@ -46,6 +56,17 @@ void setup()
   strokeWeight(6);
 }
 
+//Create background
+//Display, move, and set constraints for person "test"
+//Display data (optional: Bug testing only)
+//If player is facing right, set arms to right and run functions display and work for class arm
+//If player is facing left, set arms to left and run functions display and work for class arm
+//If player is running right, use right-facing array to display running player
+//If player is facing left, use left-facing array to display running player
+//If player is facing left, all arm-related variables and functions work so that arms move to the right
+//If player is facing left, all arm-related variables and functions work so that arms move to the left
+
+
 void draw()
 {
   testback.resize(displayWidth, displayHeight);
@@ -55,7 +76,6 @@ void draw()
   test.constraints();
   jump(test);
 //  data();
-  //  E1.display();
 
 
   if (right == true)

@@ -1,5 +1,10 @@
 class Running
 {
+
+  //Declares image array that displays running person
+  //Creates PVectors that control location, velocity, and acceleration
+
+
   PImage[] run;
   int imageCount;
   int frame;
@@ -9,6 +14,7 @@ class Running
   PVector vel = new PVector(0, 0);
   PVector acc = new PVector(0, 0);
 
+  //More stuff about image arrays
 
 
   Running(String imagePrefix, int count)
@@ -22,6 +28,8 @@ class Running
       run[i] = loadImage(filename);
     }
   }
+  
+  //Allows array to move throught images
 
   void display(Person t)
   {
@@ -31,6 +39,8 @@ class Running
       image(run[frame], t.loc.x, t.loc.y + 150);
     }
   }
+  
+  //Necessary for array
 
   int getWidth()
   {
