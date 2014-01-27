@@ -1,6 +1,6 @@
 class Person
 {
-  PVector loc = new PVector(0, height - 600);
+  PVector loc = new PVector(0, height);
   PVector vel = new PVector(0, 0);
   PVector acc = new PVector(0, 0);
 
@@ -8,20 +8,40 @@ class Person
 
   Running run;
 
-  PImage test;
+  PImage test_l, test_r, test_r_jump;
 
 
   Person()
   {
-    test = loadImage("test.gif");
+    test_l = loadImage("test_l.png");
+    test_r = loadImage("test_r.png");
     run = new Running("Rwby_r", 18);
   }
 
   void display()
   {
+    
     if (movement == false)
     {
-      image(test, loc.x, loc.y);
+      if (left == false && right == false)
+      {
+        image(test_r, loc.x, loc.y+150);
+      }
+
+      if (left == true)
+      {
+        image(test_l, loc.x, loc.y+150);
+      }
+
+      if (right == true)
+      {
+        image(test_r, loc.x, loc.y+150);
+      }
+
+      //      if (up == true)
+      //      {
+      //        image(test_r_jump, loc.x, loc.y + 150);
+      //      }
     }
   }
 
@@ -30,50 +50,93 @@ class Person
 
     if (keyPressed)
     {
-
-      //       if (key == 'd' || key =='D')
-      //        {
-      //          vel.x = 8;
-      //          loc.add(vel);
-      //        }
+      
+      if ( BlackBox.isKeyDown(BlackBox.VK_F))
+      {
+        attack = true;
+      }
+      else
+      {
+        attack = false;
+      }
 
 
       if (key == CODED)
       {
-        if (keyCode == RIGHT)
+        if (jump == false)
+        {
+          if (BlackBox.isKeyDown(BlackBox.VK_RIGHT) && BlackBox.isKeyDown(BlackBox.VK_UP))
+          {
+            vel.x = 8;
+            loc.add(vel);
+            running = true;
+            movement = true;
+            right = true;
+            jump = true;
+            jumpSpeed = 15;
+            up = true;
+          }
+          else
+          {
+            up = false;
+          }
+        }
+        if (BlackBox.isKeyDown(BlackBox.VK_RIGHT))
         {
           vel.x = 8;
           loc.add(vel);
           running = true;
           movement = true;
+          left = false;
           right = true;
         }
-        else
-        {
-         right = false; 
-        }
+//        else
+//        {
+//          right = false;
+//        }
+      }
 
-        if (keyCode == LEFT)
+      if (jump == false)
+      {
+        if (BlackBox.isKeyDown(BlackBox.VK_LEFT) && BlackBox.isKeyDown(BlackBox.VK_UP))
         {
           vel.x = 8;
           loc.sub(vel);
           running = true;
           movement = true;
           left = true;
+          jump = true;
+          jumpSpeed = 15;
+          up = true;
         }
         else
         {
-         left = false; 
+          up = false;
         }
-        //        else
-        //        {
-        //          movement = false;
-        //        }
-
-        if (keyCode == UP)
+      }
+      if (BlackBox.isKeyDown(BlackBox.VK_LEFT))
+      {
+        vel.x = 8;
+        loc.sub(vel);
+        running = true;
+        movement = true;
+        right = false;
+        left = true;
+      }
+//      else
+//      {
+//        left = false;
+//      }
+      //        else
+      //        {
+      //          movement = false;
+      //        }
+      if (jump == false)
+      {
+        if (BlackBox.isKeyDown(BlackBox.VK_UP))
         {
           jump = true;
-          jumpSpeed = 5;
+          jumpSpeed = 15;
           //          loc.y -= jumpSpeed;
           //          jumpSpeed -= .1;
           //          if (loc.y >= height - 600)
@@ -81,14 +144,19 @@ class Person
           //            loc.y = height - 600;
           //            jump = false;
           //          }
-          running = true;
-          movement = true;
+          running = false;
+          up = true;
+          //          movement = true;
         }
-        //        else
-        //        {
-        //          movement = false;
-        //        }
+        else
+        {
+          up = false;
+        }
       }
+      //        else
+      //        {
+      //          movement = false;
+      //        }
     }
     else
     {
