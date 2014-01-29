@@ -1,8 +1,6 @@
 FinalProject
 ============
 
-Description
-===========
 A combat game based on the web anime RWBY.
 
 Team
