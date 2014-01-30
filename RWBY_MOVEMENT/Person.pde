@@ -25,16 +25,19 @@ class Person
     {
       if (left == false && right == false)
       {
+        imageMode(CORNER);
         image(test_r, loc.x, loc.y+150);
       }
 
       if (left == true)
       {
+        imageMode(CORNER);
         image(test_l, loc.x, loc.y+150);
       }
 
       if (right == true)
       {
+        imageMode(CORNER);
         image(test_r, loc.x, loc.y+150);
       }
 
@@ -163,8 +166,8 @@ class Person
       running = false;
       movement = false;
     }
-    text(vel.y, 20, 50);
-    text(acc.y, 20, 70);
+//    text(vel.y, 20, 50);
+//    text(acc.y, 20, 70);
   }
 
   void constraints()

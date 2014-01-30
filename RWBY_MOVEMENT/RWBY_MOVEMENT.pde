@@ -2,15 +2,36 @@
 //Create variables that control person and arms 
 
 Person test;
+Timer T1 = new Timer();
 
 Arm a1, a2;
 Arm_Left al1, al2;
+
+Ruby r1;
+Weiss w1;
+Blake b1;
+Yang y1;
+Vbar v1;
+Pbar p1;
+Over o1;
+Won wn1;
+
+boolean ruby=false;
+boolean weiss=false;
+boolean blake=false;
+boolean yang=false;
+
+boolean win = false;
+boolean lose = false;
+
 boolean spunch=false;
 boolean upunch=false;
 boolean reflex=false;
 
+boolean en_hit = false;
+boolean pl_hit = false;
+
 Running run_r, run_l;
-Timer T1 = new Timer();
 
 PImage testback;
 
@@ -31,6 +52,7 @@ int time2 = 0;
 int time3 = 0;
 
 int number = 0;
+int rand = int(random(1, 4));
 
 //Initialize Blackbox
 //Set framerate
@@ -54,6 +76,15 @@ void setup()
   al2 = new Arm_Left(test);
 
   strokeWeight(6);
+
+  r1 = new Ruby ();
+  w1 = new Weiss ();
+  b1 = new Blake ();
+  y1 = new Yang ();
+  v1 = new Vbar ();
+  p1 = new Pbar ();
+  o1 = new Over ();
+  wn1 = new Won ();
 }
 
 //Create background
@@ -69,17 +100,156 @@ void setup()
 
 void draw()
 {
-  testback.resize(displayWidth, displayHeight);
-  background(testback);
-  test.display();
-  test.move();
-  test.constraints();
-  jump(test);
-//  data();
+  if (keyPressed)
+  {
+
+    if (rand == 1)
+    {
+      ruby = true;
+    }
+    if (rand == 2)
+    {
+      weiss = true;
+    }
+
+    if (rand == 3)
+    {
+      blake = true;
+    }
+
+    if (rand == 4)
+    {
+      yang = true;
+    }
+  }
+  //  text("Win =" + win, 10, 30);
+  //  text("Lose =" + lose, 10, 40);
+  T1.time();
+
+  if ((BlackBox.isKeyDown(BlackBox.VK_ALT)))
+  {
+    en_hit = true;
+  }
+  else
+  {
+    en_hit = false;
+  }
+
+  if ((BlackBox.isKeyDown(BlackBox.VK_SHIFT)))
+  {
+    pl_hit = true;
+  }
+  else
+  {
+    pl_hit = false;
+  }
+
+  //  if ((BlackBox.isKeyDown(BlackBox.VK_C)))
+  //  {
+  //    lose = true;
+  //    win = false;
+  //  }
+
+  if (lose == true)
+  {
+    o1.show();
+  }
+
+  if (win == true)
+  {
+    wn1.show();
+  }
+
+  //  if ((BlackBox.isKeyDown(BlackBox.VK_X)))
+  //  {
+  //    win = true;
+  //    lose = false;
+  //  }
+
+
+
+  if (ruby == true)
+  {
+    r1.show();
+    r1.move(test, T1);
+    test.display();
+    test.move();
+    test.constraints();
+    jump(test);
+    //    v1.show();
+    v1.setGradient();
+    stroke(0);
+    //    p1.show();
+    p1.setGradient();
+    stroke(0);
+    text("En_Hit =" + en_hit, 10, 10);
+    text("Pl_Hit =" + pl_hit, 10, 20);
+  }
+
+
+
+  if (weiss == true)
+  {
+    w1.show();
+    w1.move(test, T1);
+    test.display();
+    test.move();
+    test.constraints();
+    jump(test);
+    //    v1.show();
+    v1.setGradient();
+    stroke(0);
+    //    p1.show();
+    p1.setGradient();
+    stroke(0);
+    text("En_Hit =" + en_hit, 10, 10);
+    text("Pl_Hit =" + pl_hit, 10, 20);
+  }
+
+  if (blake == true)
+  {
+    b1.show();
+    b1.move(test, T1);
+    test.display();
+    test.move();
+    test.constraints();
+    jump(test);
+    //    v1.show();
+    v1.setGradient();
+    stroke(0);
+    //    p1.show();
+    p1.setGradient();
+    stroke(0);
+    text("En_Hit =" + en_hit, 10, 10);
+    text("Pl_Hit =" + pl_hit, 10, 20);
+  }
+
+  if (yang == true)
+  {
+    y1.show();
+    y1.move(test, T1);
+    test.display();
+    test.move();
+    test.constraints();
+    jump(test);
+    //    v1.show();
+    v1.setGradient();
+    stroke(0);
+    //    p1.show();
+    p1.setGradient();
+    stroke(0);
+    text("En_Hit =" + en_hit, 10, 10);
+    text("Pl_Hit =" + pl_hit, 10, 20);
+  }
+
+
+
+  //  data();
 
 
   if (right == true)
   {
+    fill(0);
     a1.display(test);
     a1.work(test);
     a2.work(test);
@@ -89,6 +259,7 @@ void draw()
 
   if (left == true)
   {
+    fill(0);
     al1.display(test);
     al1.work(test);
     al2.work(test);
@@ -191,6 +362,7 @@ void draw()
   //  run.constraints();
 }
 
+
 void jump(Person t)
 {
   //  if (keyPressed)
@@ -206,7 +378,7 @@ void jump(Person t)
   if (jump == true)
   {
     t.loc.y -= jumpSpeed;
-    jumpSpeed -= .7;
+    jumpSpeed -= .4;
     //    if (t.loc.y < height - 600)
     //    {
     //     t.test = loadImage("ruby_attack.gif"); 

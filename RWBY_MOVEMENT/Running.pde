@@ -36,6 +36,7 @@ class Running
     frame = (frame + 1) % imageCount;
     if (running == true)
     {
+      imageMode(CORNER);
       image(run[frame], t.loc.x, t.loc.y + 150);
     }
   }
