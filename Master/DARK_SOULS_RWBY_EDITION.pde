@@ -201,10 +201,11 @@ void draw() {
     fill(255);
     textAlign(CENTER);
     textSize(45);
-    text("In RWBY: The Game, you control a stickfigure.", width/2, 100);
-    text("The goal of the game is to eliminate your enemy before it eliminates you.", width/2, 200);
-    text("Move using the arrow keys, and attack using the W and S keys.", width/2, 300);
-    text("The enemy's movements may randomize once in a while. Don't get hit!", width/2, 400);
+    text ("Jump: Up arrow", width/2, height/6);
+    text ("Left: Left Arrow", width/2, 2*height/6);
+    text ("Right: Right Arrow", width/2, 3*height/6);
+    text ("Punch: S or W Keys", width/2, 4*height/6);
+    text ("Win by draining your enemy's health bar.", width/2, 5*height/6);
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
   }
@@ -542,52 +543,17 @@ void mousePressed() {
 
 void jump(Person t)
 {
-  //  if (keyPressed)
-  //  {
-  //    if (key == CODED)
-  //    {
-  //      if (keyCode == UP)
-  //      {
-  //        jump = true;
-  //      }
-  //    }
-  //  }
   if (jump == true)
   {
     t.loc.y -= jumpSpeed;
     jumpSpeed -= .4;
-    //    if (t.loc.y < height - 600)
-    //    {
-    //     t.test = loadImage("ruby_attack.gif"); 
-    //    }
-    //    else
-    //    {
-    //     t.test = loadImage("test.gif"); 
-    //    }
     if (t.loc.y > height - 600)
     {
       t.loc.y = height - 600;
       jump = false;
       println(jump);
     }
-    //    if (t.loc.y == height - 600)
-    //    {
-    //     jump = false; 
-    //    }
   }
-}
-
-void data()
-{
-  text("Left = " + left, 100, 10);
-  text("Right = " + right, 100, 20);
-  text("Up = " + up, 100, 30);
-  text("Movement = " + movement, 100, 40);
-  text("Running = " + running, 100, 50);
-  text("Attack = " + attack, 100, 60);
-  text("Jump = " + jump, 100, 70);
-  text("Spunch = " + spunch, 100, 80);
-  text("Upunch = " + upunch, 100, 90);
 }
 
 void stop()
