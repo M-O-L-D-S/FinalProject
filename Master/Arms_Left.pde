@@ -126,5 +126,18 @@ class Arm_Left {
       upunchSpeed=-15;
     }
   }
+
+  //  void reflex(){
+  //    xDist-=5;
+  //    yDist-=1;
+  //       if (base>=300) {
+  //      rspeed=4;
+  //    }
+  //    if (xDist<oldxDist) {
+  //      xDist=oldxDist;
+  //     reflex=false;
+  //      rspeed=-5;
+  //    }
+  //  }
 } 
 

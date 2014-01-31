@@ -9,8 +9,6 @@ class Sel {
     Font = loadFont ("Font.vlw");
   }
 
-  //Creates a character selection screen
-
   void show (Timer ti) {
     textAlign (CENTER);
     textFont (Font, 50);
@@ -83,6 +81,12 @@ class Sel {
         yang = true;
       }
     }
+
+    //    else {
+    //      sel = loadImage ("None.jpg");
+    //      text("Please choose.", width/2, height/2);
+    //    }
+    //    image (sel, width/2, height/2, sel.width/2, sel.height/2);
   }
 }
 

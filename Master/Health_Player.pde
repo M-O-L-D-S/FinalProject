@@ -21,10 +21,11 @@ class Pbar {
     setGradient(test, r1, w1, b1, y1);
     if (w <= 0) {
       lose = true;
+      //      textFont (font, 50);
+      //      textAlign (CENTER);
+      //      text ("Back to class!", width/2, height/12);
     }
   }
-  
-    //Displays player health bar and effect of attacks on player
 
   void setGradient(Person t, Ruby r, Weiss we, Blake b, Yang ya) {
 
@@ -32,6 +33,8 @@ class Pbar {
     {
       w -= 10;
     }
+    
+//    rect(t.loc.x+275,t.loc.y+225,25,25);
     
     if (dist(t.loc.x+275, t.loc.y+225, r.vloc.x-50, r.vloc.y+25) < 100)
     {
@@ -64,6 +67,9 @@ class Pbar {
 
     if (w <= 0) {
       lose = true;
+      //      textFont (font, 50);
+      //      textAlign (CENTER);
+      //      text ("Back to class!", width/2, height/12);
       ruby = false;
       weiss = false;
       blake = false;

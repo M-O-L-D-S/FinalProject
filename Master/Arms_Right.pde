@@ -31,6 +31,10 @@ class Arm {
     {
       a = new PVector(t.loc.x + 280, t.loc.y + 290);
     }
+//    if (left == true)
+//    {
+//      a = new PVector(t.loc.x + 2200, t.loc.y + 80);
+//    }
 
     println(t.loc.x);
     b.x = a.x + xDist;
@@ -121,5 +125,18 @@ class Arm {
       upunchSpeed=15;
     }
   }
+
+  //  void reflex(){
+  //    xDist-=5;
+  //    yDist-=1;
+  //       if (base>=300) {
+  //      rspeed=4;
+  //    }
+  //    if (xDist<oldxDist) {
+  //      xDist=oldxDist;
+  //     reflex=false;
+  //      rspeed=-5;
+  //    }
+  //  }
 } 
 

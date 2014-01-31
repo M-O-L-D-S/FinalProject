@@ -18,8 +18,6 @@ class Person
     run = new Running("Rwby_r", 18);
   }
 
-  //Shows player
-
   void display()
   {
     
@@ -42,10 +40,13 @@ class Person
         imageMode(CORNER);
         image(test_r, loc.x, loc.y+150);
       }
+
+      //      if (up == true)
+      //      {
+      //        image(test_r_jump, loc.x, loc.y + 150);
+      //      }
     }
   }
-  
-  //Controls player movements
 
   void move()
   {
@@ -92,6 +93,10 @@ class Person
           left = false;
           right = true;
         }
+//        else
+//        {
+//          right = false;
+//        }
       }
 
       if (jump == false)
@@ -121,33 +126,49 @@ class Person
         right = false;
         left = true;
       }
-
+//      else
+//      {
+//        left = false;
+//      }
+      //        else
+      //        {
+      //          movement = false;
+      //        }
       if (jump == false)
       {
         if (BlackBox.isKeyDown(BlackBox.VK_UP))
         {
           jump = true;
           jumpSpeed = 15;
-
+          //          loc.y -= jumpSpeed;
+          //          jumpSpeed -= .1;
+          //          if (loc.y >= height - 600)
+          //          {
+          //            loc.y = height - 600;
+          //            jump = false;
+          //          }
           running = false;
           up = true;
-
+          //          movement = true;
         }
         else
         {
           up = false;
         }
       }
+      //        else
+      //        {
+      //          movement = false;
+      //        }
     }
     else
     {
       running = false;
       movement = false;
     }
-
+//    text(vel.y, 20, 50);
+//    text(acc.y, 20, 70);
   }
-  
-  //Stops player from fallnig through the floor
 
   void constraints()
   {
@@ -155,6 +176,10 @@ class Person
     {
       loc.y = height - 600;
     }
+    //    if (vel.y >= 70)
+    //    {
+    //      vel.y = 70;
+    //    }
   }
 }
 

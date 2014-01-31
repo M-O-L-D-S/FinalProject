@@ -24,10 +24,12 @@ class Vbar {
       wn1.show ();
     }
   }
-  
-  //Displays enemy health bar and effect of attacks on enemies
 
   void setGradient(Person t, Ruby r, Weiss we, Blake b, Yang ya) {
+
+    //    x = 5*width/8;
+    //    y = height/30;
+    //    w = 500;
 
     if (en_hit == true)
     {

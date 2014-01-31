@@ -29,7 +29,7 @@ class Running
     }
   }
   
-  //Allows array to move through images
+  //Allows array to move throught images
 
   void display(Person t)
   {
@@ -47,5 +47,62 @@ class Running
   {
     return run[0].width;
   }
+
+  //  void move()
+  //  {
+  //
+  //    if (keyPressed)
+  //    {
+  //
+  //      if (key == 'd' || key =='D')
+  //      {
+  //        vel.x = 8;
+  //        loc.add(vel);
+  //      }
+  //
+  //
+  //      if (key == CODED)
+  //      {
+  //        if (keyCode == RIGHT)
+  //        {
+  //          vel.x = 8;
+  //          loc.add(vel);
+  //        }
+  //
+  //        if (keyCode == LEFT)
+  //        {
+  //          vel.x = 8;
+  //          loc.sub(vel);
+  //        }
+  //
+  //        if (keyCode == UP)
+  //        {
+  //          jump = true;
+  //          jumpSpeed = 5;
+  //          loc.y -= jumpSpeed;
+  //          jumpSpeed -= .1;
+  //          if (loc.y >= height - 600)
+  //          {
+  //            loc.y = height - 600;
+  //            jump = false;
+  //          }
+  //        }
+  //      }
+  //    }
+  //    text(vel.y, 20, 50);
+  //    text(acc.y, 20, 70);
+  //  }
+  //
+  //  void constraints()
+  //  {
+  //    if (loc.y >= height - 600)
+  //    {
+  //      loc.y = height - 600;
+  //    }
+  //    if (vel.y >= 70)
+  //    {
+  //      vel.y = 70;
+  //    }
+  //  }
 }
 

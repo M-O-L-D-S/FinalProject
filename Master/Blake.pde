@@ -15,8 +15,6 @@ class Blake {
     VillainX = 4*width/5;
     VillainY = 2*height/6;
   }
-  
-  //Sets Blake background
 
   void show () {
     imageMode (CORNER);
@@ -24,8 +22,6 @@ class Blake {
     imageMode (CENTER);
     image (vl, vloc.x, vloc.y);
   }
-
-  //Allows enemy to move on Blake's level
 
   void move(Person t, Timer ti)
   {
@@ -102,7 +98,15 @@ class Blake {
       vvel.x = -vvel.x;
     }
 
+    //    if (vloc.x >= t.loc.x)
+    //    {
     vloc.sub(vvel);
+    //    }
+    //
+    //    if (vloc.x <= t.loc.x)
+    //    {
+    //      vloc.add(vvel);
+    //    }
   }
 }
 

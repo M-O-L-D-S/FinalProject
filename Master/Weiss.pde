@@ -16,16 +16,12 @@ class Weiss {
     VillainY = 2*height/6;
   }
 
-  //Sets Weiss background
-
   void show () {
     imageMode (CORNER);
     image (bk, 0, 0, displayWidth, displayHeight);
     imageMode (CENTER);
     image (vl, vloc.x, vloc.y);
   }
-
-  //Allows enemy to move on Weiss's level
 
   void move(Person t, Timer ti)
   {
@@ -102,7 +98,15 @@ class Weiss {
       vvel.x = -vvel.x;
     }
 
+    //    if (vloc.x >= t.loc.x)
+    //    {
     vloc.sub(vvel);
+    //    }
+    //
+    //    if (vloc.x <= t.loc.x)
+    //    {
+    //      vloc.add(vvel);
+    //    }
   }
 }
 

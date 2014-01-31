@@ -16,16 +16,12 @@ class Yang {
     VillainY = 2*height/6;
   }
 
-  //Sets Yang background
-
   void show () {
     imageMode (CORNER);
     image (bk, 0, 0, displayWidth, displayHeight);
     imageMode (CENTER);
     image (vl, vloc.x, vloc.y);
   }
-
-  //Allows enemy to move on Yang's level
 
   void move(Person t, Timer ti)
   {
@@ -101,7 +97,16 @@ class Yang {
     {
       vvel.x = -vvel.x;
     }
+
+    //    if (vloc.x >= t.loc.x)
+    //    {
     vloc.sub(vvel);
+    //    }
+    //
+    //    if (vloc.x <= t.loc.x)
+    //    {
+    //      vloc.add(vvel);
+    //    }
   }
 }
 

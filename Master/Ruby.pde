@@ -15,17 +15,14 @@ class Ruby {
     VillainX = 4*width/5;
     VillainY = 2*height/6;
   }
-  
-  //Sets Ruby background
 
   void show () {
     imageMode (CORNER);
     image (bk, 0, 0, displayWidth, displayHeight);
     imageMode (CENTER);
     image (vl, vloc.x, vloc.y);
+//    rect(vloc.x-50,vloc.y+25,20,20);
   }
-  
-  //Allows enemy to move on Ruby's level
 
   void move(Person t, Timer ti)
   {
@@ -102,7 +99,15 @@ class Ruby {
       vvel.x = -vvel.x;
     }
 
+    //    if (vloc.x >= t.loc.x)
+    //    {
     vloc.sub(vvel);
+    //    }
+    //
+    //    if (vloc.x <= t.loc.x)
+    //    {
+    //      vloc.add(vvel);
+    //    }
   }
 }
 
