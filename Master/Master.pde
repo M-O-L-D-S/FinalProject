@@ -231,12 +231,19 @@ void draw() {
   else if (StartScreen == false && HowToPlay == true) {
     if (LiamBoolean == true) {
       image(Liam, width/2, height/2, displayWidth, displayHeight);
-
-      text("", 0, 0);
     }
     else if (LiamBoolean == false) {
       background(0);
     }
+    
+    fill(255);
+    textAlign(CENTER);
+    textSize(45);
+    text ("Jump: Up arrow", width/2, height/6);
+    text ("Left: Left Arrow", width/2, 2*height/6);
+    text ("Right: Right Arrow", width/2, 3*height/6);
+    text ("Punch: S or W Keys", width/2, 4*height/6);
+    text ("Win by draining your enemy's health bar.", width/2, 5*height/6);
     rectangle(width/2, height-height/16);
     options("Back", width/2, height - (height/16)+9);
   }
